@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+}
+
+.game {
+    min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+    gap: 20px;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    margin: 5% 5%;
+}
+
+.tortuga {
+    border: 2px black;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 5% 15%;
+}
+
+.dado {
+    display: flex;
+    justify-content: center;
+    height: 20%;
+}
+
+.dado button {
+    border: none;
+    background-color: inherit;
+    color: inherit;
+}
