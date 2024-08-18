@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -20,28 +21,49 @@ body {
 .titulo {
     display: flex;
     justify-content: center;
-    height: 20%;
-    margin: 5% 5%;
+    margin: 2% 5%;
+    font-size: 80px;
+    font-family: inherit;
 }
 
-.tortuga {
-    border: 2px black;
-    height: 50%;
+.marco-tortuga {
     display: flex;
     justify-content: center;
+}
+
+.silueta {
+    height: 500px;
+    width: 500px;
     border: 2px solid white;
     border-radius: 10px;
-    margin: 5% 15%;
 }
 
-.dado {
+.dados {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dado-uno,
+.dado-dos {
+    border: 2px solid white;
+    border-radius: 10px;
+    height: 150px;
+    width: 150px;
+}
+
+.lanzar-dados {
     display: flex;
     justify-content: center;
-    height: 20%;
 }
 
-.dado button {
-    border: none;
-    background-color: inherit;
-    color: inherit;
+.lanzar-dados button {
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-family: inherit;
+    font-weight: bold;
+    height: 40px;
+    width: 150px;
 }
