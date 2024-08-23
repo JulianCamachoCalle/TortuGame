@@ -21,22 +21,31 @@ document.querySelector('.btn-tirar').addEventListener('click', function () {
         intentosRestantes -= 1;
     }
 
-    document.getElementById('vidas').textContent = intentosRestantes;
+    actualizarBarraDeVidas(intentosRestantes);
 
     setTimeout(verificarGanar, 200);
     setTimeout(verificarPerder, 200);
 });
 
-function verificarGanar () {
+function actualizarBarraDeVidas(intentos) {
+    for (var j = 1; j <= 10; j++) {
+        var corazon = document.getElementById('corazon' + j);
+        if (j <= intentos) {
+            corazon.classList.remove('vacio');
+        } else {
+            corazon.classList.add('vacio');
+        }
+    }
+}
+
+function verificarGanar() {
     if (i == 3) {
         window.alert("GANASTE!");
-
         var imagenTortuga = document.querySelector('.tortuga');
         imagenTortuga.src = 'img/silueta.png';
-
         i = 0;
         intentosRestantes = 10;
-        document.getElementById('vidas').textContent = intentosRestantes;
+        actualizarBarraDeVidas(intentosRestantes);
     }
 }
 
@@ -47,6 +56,6 @@ function verificarPerder() {
         imagenTortuga.src = 'img/silueta.png';
         i = 0;
         intentosRestantes = 10;
-        document.getElementById('vidas').textContent = intentosRestantes;
+        actualizarBarraDeVidas(intentosRestantes);
     }
 }
