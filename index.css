@@ -21,9 +21,9 @@ body {
 .titulo {
     display: flex;
     justify-content: center;
-    margin: 2% 5%;
-    font-size: 80px;
-    font-family: inherit;
+    margin-top: 10px;
+    font-size: 60px;
+    font-family: Impact;
 }
 
 .marco-tortuga {
@@ -71,7 +71,6 @@ body {
 .vidas {
     display: flex;
     gap: 5px;
-    margin-top: 20px;
     justify-content: center;
 }
 
