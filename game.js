@@ -1,4 +1,6 @@
 var i = 0;
+var intestos=10;
+
 
 document.querySelector('.btn-tirar').addEventListener('click', function () {
     var dado1 = Math.floor(Math.random() * 6) + 1;
@@ -14,9 +16,15 @@ document.querySelector('.btn-tirar').addEventListener('click', function () {
         i += 1;
         var imagenTortuga = document.querySelector('.tortuga');
         imagenTortuga.src = 'img/p' + i + '.png';
+        intentosRestantes = 10;  
+    } else {
+        intentosRestantes -= 1;
     }
 
+    document.getElementById('vidas').textContent = intentosRestantes;
+
     setTimeout(verificarGanar, 200);
+    setTimeout(verificarPerder, 200);
 });
 
 function verificarGanar () {
@@ -27,5 +35,18 @@ function verificarGanar () {
         imagenTortuga.src = 'img/silueta.png';
 
         i = 0;
+        intentosRestantes = 10;
+        document.getElementById('vidas').textContent = intentosRestantes;
+    }
+}
+
+function verificarPerder() {
+    if (intentosRestantes <= 0) {
+        window.alert("PERDISTE!");
+        var imagenTortuga = document.querySelector('.tortuga');
+        imagenTortuga.src = 'img/silueta.png';
+        i = 0;
+        intentosRestantes = 10;
+        document.getElementById('vidas').textContent = intentosRestantes;
     }
 }
