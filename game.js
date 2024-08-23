@@ -1,30 +1,31 @@
 var i = 0;
-var intestos=10;
-
+var intentosRestantes = 10; 
 
 document.querySelector('.btn-tirar').addEventListener('click', function () {
+if (intentosRestantes > 0) {  
     var dado1 = Math.floor(Math.random() * 6) + 1;
     var dado2 = Math.floor(Math.random() * 6) + 1;
+    
+        var resultadoDado1 = document.querySelector('.dado-uno');
+        resultadoDado1.src = 'img/d' + dado1 + '.png';
 
-    var resultadoDado1 = document.querySelector('.dado-uno');
-    resultadoDado1.src = 'img/d' + dado1 + '.png';
+        var resultadoDado2 = document.querySelector('.dado-dos');
+        resultadoDado2.src = 'img/d' + dado2 + '.png';
 
-    var resultadoDado2 = document.querySelector('.dado-dos');
-    resultadoDado2.src = 'img/d' + dado2 + '.png';
+        if (dado1 == dado2) {
+            i += 1;
+            var imagenTortuga = document.querySelector('.tortuga');
+            imagenTortuga.src = 'img/p' + i + '.png';
+            intentosRestantes = 10;  
+        } else {
+            intentosRestantes -= 1;
+        }
 
-    if (dado1 == dado2) {
-        i += 1;
-        var imagenTortuga = document.querySelector('.tortuga');
-        imagenTortuga.src = 'img/p' + i + '.png';
-        intentosRestantes = 10;  
-    } else {
-        intentosRestantes -= 1;
+        actualizarBarraDeVidas(intentosRestantes);
+
+        setTimeout(verificarGanar, 200);
+        setTimeout(verificarPerder, 200);
     }
-
-    actualizarBarraDeVidas(intentosRestantes);
-
-    setTimeout(verificarGanar, 200);
-    setTimeout(verificarPerder, 200);
 });
 
 function actualizarBarraDeVidas(intentos) {
