@@ -60,3 +60,19 @@ function verificarPerder() {
         actualizarBarraDeVidas(intentosRestantes);
     }
 }
+
+var musica = document.getElementById('musicaFondo');
+var btnMusica = document.getElementById('btn-musica');
+var iconoMusica = btnMusica.querySelector('i');
+
+btnMusica.addEventListener('click', function () {
+    if (musica.paused) {
+        musica.play();
+        iconoMusica.classList.remove('bi-volume-off-fill');
+        iconoMusica.classList.add('bi-volume-up-fill');
+    } else {
+        musica.pause();
+        iconoMusica.classList.remove('bi-volume-up-fill');
+        iconoMusica.classList.add('bi-volume-off-fill');
+    }
+});
